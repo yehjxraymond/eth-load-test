@@ -14,17 +14,16 @@ const reportSummary = () => {
   process.send({
     type: "SUMMARY",
     from: account.address,
-    duration: stopTime - startTime,
+    startTime: startTime.getTime(),
+    stopTime: stopTime.getTime(),
     transactions: txCount
   });
 }
 
 const reportTransaction = (tx) => {
-  const {from, transactionHash} = tx;
   process.send({
+    ...tx,
     type: "TX",
-    from,
-    transactionHash,
   });
 }
 
