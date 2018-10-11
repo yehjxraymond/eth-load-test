@@ -36,7 +36,4 @@ const runScenarios = async (accs) => {
 }
 
 setup()
-.then(runScenarios)
-.then(() => {
-  console.log("Success");
-})
+.then(runScenarios);

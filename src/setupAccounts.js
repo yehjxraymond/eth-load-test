@@ -9,7 +9,6 @@ const initialiseAccounts = async ({
   const accounts = [];
   for(let i=0; i<accountsToCreate; i++){
     accounts.push(web3.eth.accounts.create());
-    //accounts.push(web3.eth.accounts.privateKeyToAccount(fundingAccountPrivateKey));
   }
 
   const nonce = await web3.eth.getTransactionCount(fundingAccount.address, "pending");
